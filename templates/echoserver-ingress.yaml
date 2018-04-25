@@ -1,0 +1,17 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: echoserver-ingress
+  annotations:
+    #nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+spec:
+  rules:
+  - host: {{ .Values.config.ingress.host  }}
+    http:
+      paths:
+      - backend:
+          serviceName: echoserver-service
+          servicePort: {{ .Values.config.servicePort  }}
+        path: /
+

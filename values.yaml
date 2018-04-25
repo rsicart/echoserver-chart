@@ -1,0 +1,11 @@
+config:
+  image: gcr.io/google_containers/echoserver:1.10
+  containerPort: 8080
+  servicePort: 8081
+  ingress:
+    host: echoserver.example.com
+
+resources:
+  requests:
+    cpu: 10m
+    memory: 10Mi

@@ -1,0 +1,12 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: echoserver-service
+spec:
+  selector:
+    app: echoserver
+  ports:
+  - protocol: TCP
+    port: 8081
+    targetPort: {{ .Values.config.containerPort  }}
